@@ -1,7 +1,8 @@
+<%@page import="java.util.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
-	// 자바 코드가 들어갈 수 있는 공간	
+	// 자바 코드가 들어갈 수 있는 공간
 %>
 
 <%--
@@ -37,6 +38,60 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<%
+		// 스크립트릿 : 자바코드가 들어가는 공간
+		Calendar cal = Calendar.getInstance();
+	%>
+	<H2>
+		<%-- JSP 표현식 : 변수의 값 또는 메서드의 결과값을 출력하는 공간 --%>
+		<%=cal.get(Calendar.YEAR)%>년
+		<%=cal.get(Calendar.MONTH) + 1%>월
+		<%=cal.get(Calendar.DAY_OF_MONTH)%>일
+	</H2>
+	<hr />
+
+	<h2>1~100까지의 합 구하기</h2>
+	<%
+		int sum = 0;
+		for (int i = 1; i <= 100; i++) {
+			sum += i;
+		}
+	%>
+	<h2>
+		1~100까지의 합 :
+		<%=sum%></h2>
+	<hr />
+
+	<%!// 자바에서 메서드 선언하는 공간
+	public int plus(int a, int b) {
+
+		return a + b;
+	}%>
+
+	<h2>
+		7+5 =
+		<%=plus(7, 5)%></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
